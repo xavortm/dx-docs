@@ -1,0 +1,26 @@
+.entry {
+	&-content {
+		font-size: 16px;
+		line-height: 1.7em;
+
+		h1,h2,h3 {
+			font-family: $font-secondary;
+			margin-bottom: 2em;
+		}
+
+		code {
+			padding: 2px 5px;
+			border: 1px solid #aaa;
+			background-color: #f0f0f0;
+			border-radius: 3px;
+		}
+	}
+
+	&-title {
+		font-size: 36px;
+		margin-bottom: 50px;
+		padding-bottom: 20px;
+		font-weight: 300;
+		border-bottom: 1px solid #eee;
+	}
+}

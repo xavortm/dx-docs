@@ -12,6 +12,7 @@ define( 'THEME_DOMAIN', 'dxdocs' );
 // Include extra files to run the theme.
 require_once( get_template_directory() . '/inc/post-types.php' );
 
+// ----------------------------------------------------------------------------
 
 if ( ! function_exists( 'dxdocs_setup' ) ) :
 
@@ -24,3 +25,17 @@ function dxdocs_setup() {
 }
 
 endif;
+add_action( 'after_setup_theme', 'dxdocs_setup' );
+
+/**
+ * Enqueues scripts and styles.
+ *
+ * @since DX Docs 0.0.1
+ */
+function dxdocs_scripts() {
+
+	// Theme stylesheet.
+	wp_enqueue_style( 'dxdocs-style', get_template_directory_uri() . '/assets/css/master.css' );
+
+}
+add_action( 'wp_enqueue_scripts', 'dxdocs_scripts' );

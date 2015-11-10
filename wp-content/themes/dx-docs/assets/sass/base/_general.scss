@@ -1,3 +1,32 @@
+// General settings.
 body {
+	background: $color-site-background;
 	font-family: $font-content;
+	font-size: 16px;
+	padding: 0;
+}
+
+// Clear up the headings.
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	line-height: 1.2;
+	color: $color-dark;
+}
+
+// Links
+a {
+	text-decoration: none;
+	color: $color-primary;
+
+	&:hover {
+		color: $color-secondary;
+		text-decoration: underline;
+	}
+}
+
+p {
+	margin: rem-calc(20px 0);
+
+	&:last-of-type { margin-bottom: 0; }
+	&:first-of-type { margin-top: 0; }
 }

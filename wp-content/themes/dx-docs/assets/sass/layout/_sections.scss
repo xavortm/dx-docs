@@ -6,14 +6,45 @@
  */
 .row { max-width: 100%; }
 
-@media (min-width: $breakpoint-small) {
-	.row { width: 640px }
-}
+// @media (min-width: $breakpoint-small) {
+// 	.row { width: 640px }
+// }
 
-@media (min-width: $breakpoint-medium) {
-	.row { width: 960px }
-}
+// @media (min-width: $breakpoint-medium) {
+// 	.row { width: 960px }
+// }
 
-@media (min-width: $breakpoint-big) {
-	.row { width: 1200px }
+// @media (min-width: $breakpoint-big) {
+// 	.row { width: 1200px }
+// }
+
+.section-viewport {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: stretch;
+	align-items: stretch;
+
+	%flex-child {
+		flex: 0 1 auto;
+		min-height: 100vh;
+	}
+
+	.viewport-aside {
+		@extend %panel;
+		@extend %flex-child;
+
+		padding-top: ui-size() * 2;
+		width: $settings-viewport-aside-width;
+		border-top: none;
+		border-left: none;
+		border-bottom: none;
+	}
+
+	.viewport-main {
+		@extend %flex-child;
+		width: 100vw;
+		padding: ui-size();
+		margin-top: ui-size();
+	}
 }

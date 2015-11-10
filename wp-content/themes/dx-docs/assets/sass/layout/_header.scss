@@ -1,0 +1,30 @@
+.site-header {
+	@extend %panel;
+}
+
+.site-title {
+	font-size: 18px;
+
+	a {
+		color: $color-gray;
+
+		@if $settings-animation {
+			transition: 0.3s;
+			transform: translateY(-3px);
+		}
+	}
+
+	a:hover {
+		color: $color-primary;
+		text-decoration: none;
+
+		@if $settings-animation {
+			transition: 0.3s;
+			transform: translateY(-3px);
+		}
+	}
+
+	a:active {
+		color: $color-dark;
+	}
+}

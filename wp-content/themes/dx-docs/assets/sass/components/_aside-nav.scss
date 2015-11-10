@@ -1,0 +1,38 @@
+.pages-ul {
+	padding: 0;
+	margin: 0;
+
+	li {
+		list-style: none;
+	}
+
+	a {
+		display: block;
+	}
+
+	& > .page_item:first-of-type {
+		margin-top: 0;
+	}
+
+	& > .page_item {
+		margin-top: rem-calc(20px);
+
+		& > a {
+			color: black;
+			font-weight: bold;
+			font-size: 20px;
+			border-bottom: 1px solid #eee;
+			padding-bottom: rem-calc(10px);
+		}
+	}
+
+	.current_page_item > a {
+		font-weight: bold;
+	}
+
+	.children {
+		margin: rem-calc(10px) 0 0;
+		padding: 0;
+		display: block;
+	}
+}
