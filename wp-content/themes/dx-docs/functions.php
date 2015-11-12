@@ -35,7 +35,28 @@ add_action( 'after_setup_theme', 'dxdocs_setup' );
 function dxdocs_scripts() {
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'dxdocs-style', get_template_directory_uri() . '/assets/css/master.css' );
+	wp_enqueue_style( 'dxdocs', get_template_directory_uri() . '/assets/css/master.css' );
+
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'epiceditor', get_template_directory_uri() . '/assets/scripts/epiceditor.min.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/scripts/scripts.js', array(), '1.0.0', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'dxdocs_scripts' );
+
+function dxdocs_js_vars() {
+
+	$can_edit = false;
+
+	if( is_user_logged_in() && current_user_can( 'edit_pages' ) ) {
+		$can_edit = true;
+	}
+
+	wp_localize_script( 'scripts', 'WPOBJ', array(
+		'home' => get_option('siteurl'),
+		'resources' => get_template_directory_uri(),
+		'canEdit' => $can_edit
+	) );
+}
+
+add_action( 'wp_enqueue_scripts', 'dxdocs_js_vars' );

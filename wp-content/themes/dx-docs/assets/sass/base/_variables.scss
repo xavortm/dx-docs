@@ -15,7 +15,7 @@ $color-light: #f0f0f0;
 $color-dark: #2c2c33;
 
 // Specifics
-$color-site-background: #f0f0f0;
+$color-site-background: #fff;
 
 // Use animations for the theme. Disable if you want higher performance.
 $settings-animation: true !default;
@@ -27,4 +27,4 @@ $settings-viewport-aside-width: 250px;
 $settings-view: "cosy" !default; // "compact" | "comfortable" | "cosy"
 
 // Set the default main-content width whitout the paddings.
-$settings-main-content-width: 800px !default;
+$settings-main-content-width: 1200px !default;

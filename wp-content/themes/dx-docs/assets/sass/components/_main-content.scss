@@ -1,7 +1,24 @@
 .main-content {
-	@extend %panel;
+	// @extend %panel;
 	max-width: $settings-main-content-width;
 	width: 100%;
 	box-sizing: border-box;
 	margin: 0 auto;
+
+	.edit-page {
+		float: right;
+		user-select: none;
+	}
+
+	.entry-content.editor.is-hidden {
+		opacity: 0;
+	}
+
+	.entry-content.editor {
+		opacity: 1;
+	}
+
+	.entry-content.visual.is-hidden {
+		display: none;
+	}
 }
